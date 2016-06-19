@@ -1,0 +1,9 @@
+{
+  "name": "vnjson-sdk",
+  "main": "./index.html",
+  "version": "0.07",
+  "dependencies": {
+    "nw-builder": "^2.2.0",
+    "vnjson-utils": "^0.4.5"
+  }
+}
