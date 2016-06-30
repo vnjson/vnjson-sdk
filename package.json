@@ -1,9 +1,25 @@
 {
-  "name": "vnjson-sdk",
-  "main": "./index.html",
-  "version": "0.07",
-  "dependencies": {
-    "nw-builder": "^2.2.0",
-    "vnjson-utils": "^0.4.5"
-  }
+    "name": "vnjson-sdk",
+    "main": "./index.html",
+    "version": "0.5.1",
+    "window": {
+        "min_width": 600,
+        "min_height": 400,
+        "max_width": 800,
+        "max_height": 600,
+        "width": 600,
+        "height": 400,
+        "show": false
+    },
+    "dependencies": {
+        "nw-builder": "^2.2.0",
+        "slash": "^1.0.0",
+        "vnjson-utils": "^0.4.5",
+        "vue": "^1.0.25",
+        "vue-i18n": "^4.0.1"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "versiony": "^1.4.0"
+    }
 }

@@ -1,28 +1,32 @@
 const 
-  vnjson           = require('vnjson-utils');
+  locales          = require('./system/locales'),
+  package          = require('./package');
+global.nwWindow = nw.Window;
+const win = nw.Window.get();
+onload = function(){
 
-const projectsDir = 'f:/sandbox';
-const projectName = "kserks";
 
 
-$('#init_btn').on('click',function(e){
-	e.preventDefault();
-	vnjson.init(projectName,projectsDir,(err)=>{
-		if(err){
-			console.error(err);
-		}else{
-			alert('Проект инициализирован');
-		}
-	});
+Vue.config = require('./config/vue');
+
+  
+win.title = `${package.name}@${package.version}`;
+
+/**
+ * intenalization
+ */
+Vue.use(VueI18n);
+Object.keys(locales).forEach(function (lang) {
+  Vue.locale(lang, locales[lang])
 });
 
-$('#remove_btn').on('click',function(e){
-	e.preventDefault();
-	vnjson.remove(`${projectsDir}/${projectName}`,(err)=>{
-		if(err){
-			console.error(err);
-		}else{
-			alert('Проект Удален');
-		}
-	});
-})
+const App = new Vue({
+  el: Vue.config.el,
+  data: require('./system/data'),
+  methods: require('./system/event-handlers')
+});
+
+
+win.show();
+	
+};

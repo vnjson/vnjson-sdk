@@ -1,0 +1,30 @@
+module.exports = {
+	notice:{
+		error:{
+
+		}
+	},
+	mainMenu:{
+		project:"Проекты",
+		settings:"Настройки",
+		help:"Помощь",
+	},
+	projectMenu:{
+		init:"create",
+		remove:"remove",
+		buildHTML:"buildHTML",
+		run:'Запуск'
+	},
+	gameMenu:{
+		characters:"Персонажи",
+		scenes:'Сцены',
+		plugins:'Плагины',
+		options:'Опции',
+		images:'Изображения',
+		audio:'Аудио'
+	},	
+	sideMenu:{},
+	settings:{
+		lang:"Язык"
+	}
+}

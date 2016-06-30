@@ -3,4 +3,6 @@
 *.jpg
 *.png
 *.wav
+version.json
 npm-debug.log
+gulpfile.js

@@ -2,16 +2,43 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>vnjson-sdk</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
-    <script type="text/javascript" src='./vendors/jquery.js'></script>
-    
+
+    <script type="text/javascript" src='./vendor/vue.min.js'></script>
+    <script type="text/javascript" src='./vendor/vue-i18n.min.js'></script>
   </head>
   <body>
-  <h1>Hello World!</h1>
-  <button id="init_btn">init</button>
-  <button id="remove_btn">remove</button>
-  <button id="build_btn">build</button>
+
+
+<div id="app">
+<section class="main-menu">
+   <span  class='btn-default'>{{$t("mainMenu.project")}}</span>
+   <span  class='btn-default'>{{$t("mainMenu.settings")}}</span>
+   <span class="btn-default"><i class="fa fa-life-ring">&nbsp;</i>{{$t("mainMenu.help")}}</span>
+</section>
+<section class="current-project-menu">
+  <span  class='btn-grey' v-on:click ="initYamlProject">{{$t("projectMenu.init")}}</span>
+  <span  class='btn-grey' v-on:click ="removeSelectedProject">{{$t("projectMenu.remove")}}</span>
+  <span  class='btn-grey' v-on:click ="buildHtmlProject">{{$t("projectMenu.buildHTML")}}</span>
+  <span  class='btn-grey' v-on:click ="runCurrentProject"><i class="fa fa-play"></i>{{$t("projectMenu.run")}}</span>
+ </section>
+
+<section class='settings'>
+  <span  class='btn-grey' v-on:click ="langSeletor">{{$t("settings.lang")}}</span>
+</section> 
+<section class='game-menu'>
+<li class="game-component"><i class="fa fa-film"></i>{{$t("gameMenu.scenes")}}</li>
+<li class="game-component"><i class="fa fa-picture-o"></i>{{$t("gameMenu.images")}}</li>
+<li class="game-component"><i class="fa fa-music"></i>{{$t("gameMenu.audio")}}</li>
+<li class="game-component"><i class="fa fa-users"></i>{{$t("gameMenu.characters")}}</li>
+<li class="game-component"><i class="fa fa-puzzle-piece"></i>{{$t("gameMenu.plugins")}}</li>
+<li class="game-component"><i class="fa fa-sliders"></i>{{$t("gameMenu.options")}}</li>
+
+</section>
+<section class='output'></section>
+</div>
 
   <script type="text/javascript" src="./main.js"></script>
   </body>
