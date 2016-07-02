@@ -1,6 +1,4 @@
-body{
-	-webkit-user-select: none;
-}
+
 
 .main-menu{
 	width:100%;
@@ -30,12 +28,7 @@ body{
 	top:20%;
 	left:0%;
 }
-.current-project-menu{
-	top:10%;
-	width:100%;
-	position: relative;
-	height: 10%;
-}
+
 .game-menu{
 	top:30%;
 	width:30%;
@@ -50,6 +43,18 @@ body{
 	cursor: pointer;
 }
 
-li{
-	list-style-type: none;
+
+
+.current-project-menu{
+	top:10%;
+	width:100%;
+	position: relative;
+	height: 10%;
+}
+
+.current-project-name{
+	color:cyan;
+}
+.current-project-name:hover{
+	color:red;
 }

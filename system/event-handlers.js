@@ -1,13 +1,14 @@
 const
-  vnjson           = require('vnjson-utils'),
-  configApp        = require('../config/app'),
-  current          = require('./current');
+  vnjson                    = require('vnjson-utils'),
+  configApp                 = require('../config/app'),
+  configProject             = require('../config/project'),
+  current                   = require('./current');
 var WINDOW = global.nwWindow.get().window;
 
 module.exports = {
 	initYamlProject:()=>{
 		//this
-		vnjson.init(projectName,projectsDir,(err)=>{
+		vnjson.init(current.project,configApp.projectsDir,(err)=>{
 			if(err){
 				console.error(err);
 			}else{
@@ -18,7 +19,7 @@ module.exports = {
 	runCurrentProject:()=>{
 		vnjson.run(configApp.port,()=>{
 			global.nwWindow.open(`http://localhost:${configApp.port}`,(new_win)=>{
-
+				new_win.title = configProject.title;
 			});
 		});
 	},

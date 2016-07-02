@@ -2,6 +2,12 @@ module.exports = {
 	notice:{
 		error:{
 
+		},
+		success:{
+
+		},
+		info:{
+			
 		}
 	},
 	mainMenu:{
@@ -10,10 +16,8 @@ module.exports = {
 		help:"Помощь",
 	},
 	projectMenu:{
-		init:"create",
-		remove:"remove",
-		buildHTML:"buildHTML",
-		run:'Запуск'
+		init:"Создать",
+		remove:"Удалить",
 	},
 	gameMenu:{
 		characters:"Персонажи",
@@ -21,7 +25,13 @@ module.exports = {
 		plugins:'Плагины',
 		options:'Опции',
 		images:'Изображения',
-		audio:'Аудио'
+		audio:'Аудио',
+		build:"Собрать",
+		run:'Запуск',
+		statistic: 'Статистика',
+		debug: 'Ошибки',
+		view: 'Просмотр',
+		library: 'library'
 	},	
 	sideMenu:{},
 	settings:{

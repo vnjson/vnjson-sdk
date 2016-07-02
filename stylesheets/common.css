@@ -1,0 +1,7 @@
+body{
+	-webkit-user-select: none;
+	font-size: 14pt;
+}
+li{
+	list-style-type: none;
+}

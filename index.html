@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
+<head>
+  <meta charset="UTF-8">
+  <!--styles-->
+  <link rel="stylesheet" type="text/css" href="./stylesheets/html5reset.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/common.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
+ <!--/styles-->
+ <!--scripts-->
+  <script type="text/javascript" src='./vendor/vue.min.js'></script>
+  <script type="text/javascript" src='./vendor/vue-i18n.min.js'></script>
+ <!--/scripts-->
+</head>
+<body>
 
-    <script type="text/javascript" src='./vendor/vue.min.js'></script>
-    <script type="text/javascript" src='./vendor/vue-i18n.min.js'></script>
-  </head>
-  <body>
-
-
+<!--app-->
 <div id="app">
 <section class="main-menu">
-   <span  class='btn-default'>{{$t("mainMenu.project")}}</span>
-   <span  class='btn-default'>{{$t("mainMenu.settings")}}</span>
-   <span class="btn-default"><i class="fa fa-life-ring">&nbsp;</i>{{$t("mainMenu.help")}}</span>
+  <span class='btn-default'><span class='current-project-name'>{{currentProjectName}}</span>
+  <span class='btn-default'><i class="fa fa-folder-open" aria-hidden="true"></i> {{$t("mainMenu.project")}}</span>
+  <span class='btn-default'><i class="fa fa-cog" aria-hidden="true"></i> {{$t("mainMenu.settings")}}</span>
+  <span class="btn-default"><i class="fa fa-life-ring">&nbsp;</i>{{$t("mainMenu.help")}}</span>
 </section>
 <section class="current-project-menu">
-  <span  class='btn-grey' v-on:click ="initYamlProject">{{$t("projectMenu.init")}}</span>
-  <span  class='btn-grey' v-on:click ="removeSelectedProject">{{$t("projectMenu.remove")}}</span>
-  <span  class='btn-grey' v-on:click ="buildHtmlProject">{{$t("projectMenu.buildHTML")}}</span>
-  <span  class='btn-grey' v-on:click ="runCurrentProject"><i class="fa fa-play"></i>{{$t("projectMenu.run")}}</span>
- </section>
+  <span  class='btn-grey' v-on:click ="initYamlProject"><i class="fa fa-plus" aria-hidden="true"></i> {{$t("projectMenu.init")}}</span>
+  <span  class='btn-grey' v-on:click ="removeSelectedProject"><i class="fa fa-times" aria-hidden="true"></i> {{$t("projectMenu.remove")}}</span>
+</section>
 
 <section class='settings'>
   <span  class='btn-grey' v-on:click ="langSeletor">{{$t("settings.lang")}}</span>
 </section> 
 <section class='game-menu'>
-<li class="game-component"><i class="fa fa-film"></i>{{$t("gameMenu.scenes")}}</li>
-<li class="game-component"><i class="fa fa-picture-o"></i>{{$t("gameMenu.images")}}</li>
-<li class="game-component"><i class="fa fa-music"></i>{{$t("gameMenu.audio")}}</li>
-<li class="game-component"><i class="fa fa-users"></i>{{$t("gameMenu.characters")}}</li>
-<li class="game-component"><i class="fa fa-puzzle-piece"></i>{{$t("gameMenu.plugins")}}</li>
-<li class="game-component"><i class="fa fa-sliders"></i>{{$t("gameMenu.options")}}</li>
-
+  <li class="game-component" v-on:click ="runCurrentProject"><i class="fa fa-play" aria-hidden="true"></i> {{$t("gameMenu.run")}}</li>
+  <li class="game-component"><i class="fa fa-folder-o" aria-hidden="true"></i>{{$t("gameMenu.view")}}</li>
+  <li class="game-component"><i class="fa fa-film" aria-hidden="true"></i> {{$t("gameMenu.scenes")}}</li>
+  <li class="game-component"><i class="fa fa-picture-o" aria-hidden="true"></i> {{$t("gameMenu.images")}}</li>
+  <li class="game-component"><i class="fa fa-music" aria-hidden="true"></i> {{$t("gameMenu.audio")}}</li>
+  <li class="game-component"><i class="fa fa-users" aria-hidden="true"></i> {{$t("gameMenu.characters")}}</li>
+  <li class="game-component"><i class="fa fa-pie-chart" aria-hidden="true"></i> {{$t("gameMenu.statistic")}}</li>
+  <li class="game-component"><i class="fa fa-bug" aria-hidden="true"></i> {{$t("gameMenu.debug")}}</li>
+  <li class="game-component"><i class="fa fa-university" aria-hidden="true"></i> {{$t("gameMenu.library")}}</li>
+  <li class="game-component"><i class="fa fa-plug" aria-hidden="true"></i> {{$t("gameMenu.plugins")}}</li>
+  <li class="game-component"><i class="fa fa-sliders"></i> {{$t("gameMenu.options")}}</li>
+  <li class="game-component" v-on:click ="buildHtmlProject"><i class="fa fa-archive" aria-hidden="true"></i> {{$t("gameMenu.build")}}</li>
 </section>
-<section class='output'></section>
+<section class='output'>
+  <div><span style="color:red"><i class="fa fa-html5" aria-hidden="true"></i></span> layers.html</div>
+   <div><span style="color:blue"><i class="fa fa-css3" aria-hidden="true"></i></span> style.css</div>
+</section><!--???-->
 </div>
-
+<!--/app-->
   <script type="text/javascript" src="./main.js"></script>
-  </body>
+</body>
 </html>
 

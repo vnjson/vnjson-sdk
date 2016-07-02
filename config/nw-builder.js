@@ -1,6 +1,11 @@
+const
+  current           = require('../system/current'),
+  configApp         = require('./app');
+
 module.exports = {
-	buildDir:"./build",
+	buildDir:configApp.projectsDir+"/"+current.project+"/build",
+	cache:"./.cache",
 	version: "0.12.2",
-	appName:"app",
-    appVersion: "0.0.7"
+	appName:current.project,
+    appVersion: current.version
 }

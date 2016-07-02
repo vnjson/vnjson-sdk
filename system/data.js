@@ -1,3 +1,6 @@
-exports = {
-	h1:"Привет новелки"
+const
+  current                = require('./current');
+
+module.exports = {
+	currentProjectName: current.project
 }

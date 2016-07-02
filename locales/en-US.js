@@ -2,6 +2,12 @@ module.exports = {
 	notice:{
 		error:{
 
+		},
+		success:{
+
+		},
+		info:{
+			
 		}
 	},
 	mainMenu:{
@@ -12,8 +18,7 @@ module.exports = {
 	projectMenu:{
 		init:"create",
 		remove:"remove",
-		buildHTML:"buildHTML",
-		run:"run"
+
 	},
 	gameMenu:{
 		characters:"Characters",
@@ -21,7 +26,13 @@ module.exports = {
 		plugins:'Plugins',
 		options:'Options',
 		images:'Images',
-		audio:'Audio'
+		audio:'Audio',
+		build:"Build",
+		run:"Run",
+		statistic:"Statistic",
+		debug: "Debug",
+		view: "View",
+		library: 'Библиотеки'
 	},
 	sideMenu:{},
 	settings:{
