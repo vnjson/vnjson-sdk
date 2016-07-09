@@ -1,14 +1,14 @@
 {
     "name": "vnjson-sdk",
     "main": "./index.html",
-    "version": "0.5.2",
+    "version": "0.5.4",
     "window": {
-        "min_width": 600,
-        "min_height": 400,
-        "max_width": 800,
-        "max_height": 600,
-        "width": 600,
-        "height": 400,
+        "min_width": 710,
+        "min_height": 390,
+        "max_width": 710,
+        "max_height": 390,
+        "width": 710,
+        "height": 390,
         "show": false,
         "icon": "./icons/vnjson-256_256.png"
     },

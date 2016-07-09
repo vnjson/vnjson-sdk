@@ -31,7 +31,7 @@ module.exports = {
 		statistic: 'Статистика',
 		debug: 'Ошибки',
 		view: 'Просмотр',
-		library: 'library'
+		library: 'Библиотеки'
 	},	
 	sideMenu:{},
 	settings:{

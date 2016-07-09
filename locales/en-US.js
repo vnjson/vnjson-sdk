@@ -32,7 +32,7 @@ module.exports = {
 		statistic:"Statistic",
 		debug: "Debug",
 		view: "View",
-		library: 'Библиотеки'
+		library: 'libraries'
 	},
 	sideMenu:{},
 	settings:{

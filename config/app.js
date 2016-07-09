@@ -1,5 +1,5 @@
 module.exports = {
-	projectsDir : 'f:/sandbox',
+	projectsDir : 'e:/sandbox',
 	/*ignore:[
 		"build",
 		".gitignore"

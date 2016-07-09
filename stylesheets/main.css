@@ -7,6 +7,10 @@
 	top:0px;
 	left:0px;
 	background-color: rgba(0,0,0,1);
+	
+}
+.main-menu-left-buttons-group{
+	float:right;
 }
 .btn-default{
 	color:#ffffff;
@@ -30,13 +34,14 @@
 }
 
 .game-menu{
-	top:30%;
+	
 	width:30%;
-	position: relative;
+	position: absolute;
+	top:10%;
 	
 }
 .game-component{
-
+	padding: 3px;
 }
 .game-component:hover{
 	color:blue;
@@ -57,4 +62,20 @@
 }
 .current-project-name:hover{
 	color:red;
+}
+
+
+#output{
+	width:600px;
+	height:400px;
+	position: absolute;
+	top:5%;
+	left:16%;
+	border:1px dotted grey;
+}
+
+#wv{
+	width:100%;
+	height:100%;
+	display:block;
 }
