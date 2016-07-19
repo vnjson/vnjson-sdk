@@ -1,6 +1,7 @@
 const
   vnjson                    = require('vnjson-utils'),
-  configVue                = require('../../config/vue');
+
+  configVue                 = require('../../config/vue');
 var WINDOW = global.nwWindow.get().window;
 
 module.exports = {

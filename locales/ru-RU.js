@@ -28,6 +28,7 @@ module.exports = {
 		audio:'Аудио',
 		build:"Собрать",
 		run:'Запуск',
+		reload:'Обновить',
 		statistic: 'Статистика',
 		debug: 'Ошибки',
 		view: 'Просмотр',

@@ -79,3 +79,13 @@
 	height:100%;
 	display:block;
 }
+
+.status-bar{
+	width:83%;
+	
+	border:1px dotted grey;
+	position: absolute;
+	left:16%;
+
+	bottom:1px;
+}

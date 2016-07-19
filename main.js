@@ -1,8 +1,9 @@
 const 
-  locales          = require('./system/locales'),
-  package          = require('./package');
-global.nwWindow = nw.Window;
-const win = nw.Window.get();
+  locales                 = require('./system/locales'),
+  package                 = require('./package');
+  global.nwWindow         = nw.Window;
+const 
+  win                     = nw.Window.get();
 
 /**
  *@ concat handlers 
@@ -25,7 +26,7 @@ onload = function(){
 
 Vue.config = require('./config/vue');
 
-  
+
 win.title = `${package.name}@${package.version}`;
 
 /**

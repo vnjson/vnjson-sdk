@@ -29,6 +29,7 @@ module.exports = {
 		audio:'Audio',
 		build:"Build",
 		run:"Run",
+		reload:'Reload',
 		statistic:"Statistic",
 		debug: "Debug",
 		view: "View",

@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
  <!--/styles-->
  <!--scripts-->
+  <script type="text/javascript" src='./vendor/jnquery.js'></script>
   <script type="text/javascript" src='./vendor/vue.min.js'></script>
   <script type="text/javascript" src='./vendor/vue-i18n.min.js'></script>
  <!--/scripts-->
@@ -29,7 +30,7 @@
 
 
 <section class='game-menu'>
-  <li v-on:click="runCurrentProject" class="game-component"><i class="fa fa-play" aria-hidden="true"></i> {{$t("gameMenu.run")}}</li>
+  <li v-on:click="runCurrentProject" class="game-component" id="run-reload"><i class="fa fa-play" aria-hidden="true"></i> {{$t("gameMenu.run")}}</li>
   <li v-on:click="viewProjectTree" class="game-component"><i class="fa fa-folder-o" aria-hidden="true"></i>{{$t("gameMenu.view")}}</li>
   <li v-on:click="showScenesData" class="game-component"><i class="fa fa-film" aria-hidden="true"></i> {{$t("gameMenu.scenes")}}</li>
   <li v-on:click="showImagesData" class="game-component"><i class="fa fa-picture-o" aria-hidden="true"></i> {{$t("gameMenu.images")}}</li>
@@ -46,6 +47,9 @@
 
 
 </section><!--/output-->
+<div class="status-bar">
+  <div id="pathname_vn">/scene/label/i</div>
+</div>
 <!--
 <section class='settings'>
   <span  class='btn-grey' v-on:click ="langSeletor">{{$t("settings.lang")}}</span>
