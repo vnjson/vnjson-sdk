@@ -2,6 +2,7 @@ const
   locales                 = require('./system/locales'),
   package                 = require('./package');
   global.nwWindow         = nw.Window;
+  global.nwgui            =  require('nw.gui');                 
 const 
   win                     = nw.Window.get();
 
@@ -27,7 +28,7 @@ onload = function(){
 Vue.config = require('./config/vue');
 
 
-win.title = `${package.name}@${package.version}`;
+
 
 /**
  * @intenalization
@@ -42,7 +43,6 @@ const App = new Vue({
   data: require('./system/data'),
   methods: _methods
 });
-
 
 win.show();
 	

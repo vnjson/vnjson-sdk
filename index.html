@@ -9,9 +9,10 @@
   <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
  <!--/styles-->
  <!--scripts-->
-  <script type="text/javascript" src='./vendor/jnquery.js'></script>
-  <script type="text/javascript" src='./vendor/vue.min.js'></script>
-  <script type="text/javascript" src='./vendor/vue-i18n.min.js'></script>
+  <script src='./vendor/jnquery.js'></script>
+  <script src='./vendor/vue.min.js'></script>
+  <script src='./vendor/vue-i18n.min.js'></script>
+
  <!--/scripts-->
 </head>
 <body>
@@ -19,24 +20,30 @@
 <!--app-->
 <div id="app">
 <section class="main-menu">
-  <span class='btn-default' ><span v-on:click="openCurrentProjectPage" class='current-project-name'>{{currentProjectName}}</span>
+<span class='logo'><img src="./icons/vnjson-256_256.png" style="width:15px;height:15px;"> {{winTitle}}</span>
   <section class='main-menu-left-buttons-group'>
     <span class='btn-default' v-on:click="openProjectsPage"><i class="fa fa-folder-open" aria-hidden="true"></i> {{$t("mainMenu.project")}}</span>
     <span class='btn-default' v-on:click="openSettingsPage"><i class="fa fa-cog" aria-hidden="true"></i> {{$t("mainMenu.settings")}}</span>
     <span class="btn-default" v-on:click="openHelpPage"><i class="fa fa-life-ring">&nbsp;</i>{{$t("mainMenu.help")}}</span>
-  </section>
+
+    <span v-on:click="collapseApp" class="collapse"><i class="fa fa-minus" aria-hidden="true"></i></span>
+    <span v-on:click="closeApp" class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+ </section>
+
+
+
 </section>
 
 
 
 <section class='game-menu'>
-  <li v-on:click="runCurrentProject" class="game-component" id="run-reload"><i class="fa fa-play" aria-hidden="true"></i> {{$t("gameMenu.run")}}</li>
+ <!-- <li v-on:click="runCurrentProject" class="game-component" id="run-reload"><i class="fa fa-play" aria-hidden="true"></i> {{$t("gameMenu.run")}}</li>-->
   <li v-on:click="viewProjectTree" class="game-component"><i class="fa fa-folder-o" aria-hidden="true"></i>{{$t("gameMenu.view")}}</li>
   <li v-on:click="showScenesData" class="game-component"><i class="fa fa-film" aria-hidden="true"></i> {{$t("gameMenu.scenes")}}</li>
   <li v-on:click="showImagesData" class="game-component"><i class="fa fa-picture-o" aria-hidden="true"></i> {{$t("gameMenu.images")}}</li>
   <li v-on:click="showAudioData" class="game-component"><i class="fa fa-music" aria-hidden="true"></i> {{$t("gameMenu.audio")}}</li>
   <li v-on:click="showGameCharacters" class="game-component"><i class="fa fa-users" aria-hidden="true"></i> {{$t("gameMenu.characters")}}</li>
-  <li v-on:click="showStatisticPage" class="game-component"><i class="fa fa-pie-chart" aria-hidden="true"></i> {{$t("gameMenu.statistic")}}</li>
+  <!--<li v-on:click="showStatisticPage" class="game-component"><i class="fa fa-pie-chart" aria-hidden="true"></i> {{$t("gameMenu.statistic")}}</li>-->
   <li v-on:click="showDebugPage" class="game-component"><i class="fa fa-bug" aria-hidden="true"></i> {{$t("gameMenu.debug")}}</li>
   <li v-on:click="showGameLibraries" class="game-component"><i class="fa fa-university" aria-hidden="true"></i> {{$t("gameMenu.library")}}</li>
   <li v-on:click="showDataGamePlugins" class="game-component"><i class="fa fa-plug" aria-hidden="true"></i> {{$t("gameMenu.plugins")}}</li>
@@ -44,12 +51,21 @@
   <li v-on:click="buildHtmlProject" class="game-component"><i class="fa fa-archive" aria-hidden="true"></i> {{$t("gameMenu.build")}}</li>
 </section>
 <section id='output'>
-
-
-</section><!--/output-->
-<div class="status-bar">
-  <div id="pathname_vn">/scene/label/i</div>
+ <div><span>current project: </span><span  v-on:click="openCurrentProjectPage" class='current-project-name'>{{currentProjectName}}</div>
+ <div><span>open: </span><a href="#" v-on:click="openLinkInBrowser" class="open-link-in-browser">{{location}}</a> 
 </div>
+ <div id="pathname_vn"><span>pathname: </span>scene/label/i</div>
+<a href="#"><i class="fa fa-camera" aria-hidden="true"></i>
+</a><br>
+<a href="#">jump prompt</a>
+<br>
+<a href="#"><i class="fa fa-eyedropper" aria-hidden="true"></i>
+</a>
+</section><!--/output-->
+<!--<div class="status-bar">
+
+</a>
+</div>-->
 <!--
 <section class='settings'>
   <span  class='btn-grey' v-on:click ="langSeletor">{{$t("settings.lang")}}</span>

@@ -1,20 +1,30 @@
 
-
-.main-menu{
-	width:100%;
-	height:10%;
-	position: relative;
-	top:0px;
-	left:0px;
-	background-color: rgba(0,0,0,1);
+body{
+	border:2px solid black;
+}
+.logo{
+	cursor:-webkit-zoom-in;
 	
 }
+.main-menu{
+	color:white;
+	width:100%;
+	height:20px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background-color: black;
+	-webkit-app-region: drag;
+
+}
+
 .main-menu-left-buttons-group{
 	float:right;
 }
 .btn-default{
 	color:#ffffff;
 	padding:5px;
+	 -webkit-app-region: no-drag;
 }
 .btn-default:hover{
 	color:red;
@@ -37,7 +47,7 @@
 	
 	width:30%;
 	position: absolute;
-	top:10%;
+	top:25px;
 	
 }
 .game-component{
@@ -50,36 +60,19 @@
 
 
 
-.current-project-menu{
-	top:10%;
-	width:100%;
-	position: relative;
-	height: 10%;
-}
-
-.current-project-name{
-	color:cyan;
-}
-.current-project-name:hover{
-	color:red;
-}
-
 
 #output{
-	width:600px;
-	height:400px;
+	width:300px;
+	height:220px;
 	position: absolute;
-	top:5%;
-	left:16%;
-	border:1px dotted grey;
+	top:25px;
+	left:26%;
+	border-left:1px dotted grey;
 }
-
-#wv{
-	width:100%;
-	height:100%;
-	display:block;
+.open-link-in-browser:hover{
+	color:red;
 }
-
+/*
 .status-bar{
 	width:83%;
 	
@@ -88,4 +81,21 @@
 	left:16%;
 
 	bottom:1px;
+}*/
+.collapse{
+	color:grey;
+	 -webkit-app-region: no-drag;
+}
+.collapse:hover{
+	color:blue;
+	cursor:pointer;
+}
+.close{
+	color:orange;
+	 -webkit-app-region: no-drag;
+}
+
+.close:hover{
+	color:red;
+	cursor:pointer;
 }
