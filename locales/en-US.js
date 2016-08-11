@@ -11,7 +11,7 @@ module.exports = {
 		}
 	},
 	mainMenu:{
-		project:"Projects",
+		project:"Project",
 		settings:"Settings",
 		help:"Help",
 	},

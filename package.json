@@ -9,7 +9,7 @@
         "max_height": 260,
         "width": 440,
         "height": 260,
-        "frame": false,
+        "frame": true,
         "show": false,
         "icon": "./icons/vnjson-256_256.png"
     },

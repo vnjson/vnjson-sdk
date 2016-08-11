@@ -13,7 +13,7 @@ module.exports = {
 		WINDOW.alert('Tree');
 	},
 	showScenesData:()=>{
-		WINDOW.alert('SCENES');
+		WINDOW.console.info('Сделать что бы можно было\n jump по сценам \n из этого меню');
 	},
 	showImagesData:()=>{
 		WINDOW.alert('Images');
