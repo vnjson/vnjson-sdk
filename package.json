@@ -3,12 +3,12 @@
     "main": "./index.html",
     "version": "0.5.5",
     "window": {
-        "min_width": 440,
-        "min_height": 260,
-        "max_width": 440,
-        "max_height": 260,
-        "width": 440,
-        "height": 260,
+        "min_width": 800,
+        "min_height": 600,
+        "max_width": 800,
+        "max_height": 600,
+        "width": 800,
+        "height": 600,
         "frame": true,
         "show": false,
         "icon": "./icons/vnjson-256_256.png"
