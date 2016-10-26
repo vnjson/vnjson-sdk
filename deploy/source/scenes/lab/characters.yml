@@ -1,0 +1,10 @@
+pr:
+  name: Профессор
+  color: green
+al:
+  name: Алиса
+  color: red
+ll:
+  name: Люсиль
+  color: grey
+

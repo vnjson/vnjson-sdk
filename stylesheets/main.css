@@ -1,11 +1,4 @@
 
-body{
-	border:2px solid black;
-}
-.logo{
-	cursor:-webkit-zoom-in;
-	
-}
 
 
 .btn-default{
@@ -29,12 +22,13 @@ body{
 	
 	width:30%;
 	position: absolute;
-	top:0px;
+	top:15px;
 	
 }
 .game-component{
 	padding: 3px;
-	color:#507299;
+	/*color:#507299;*/
+	color:#444;
 }
 .game-component:hover{
 	color:#99B0C6;
@@ -43,7 +37,7 @@ body{
 
 
 
-
+/*
 #output{
 	width:300px;
 	height:220px;
@@ -52,24 +46,38 @@ body{
 	left:26%;
 	border-left:1px dotted grey;
 }
-.open-link-in-browser:hover{
-	color:red;
+*/
+
+ webview {
+    display:inline-flex;
+    width:640px;
+    height:480px;
+    border:1px dotted grey;
+    position:absolute;
+    top:20px;
+    right:2px;
+ }
+webview.hide {
+    flex: 0 1;
+    width: 0px;
+    height: 0px;
+  }
+
+.pathname{
+	widht:600px;
+	height:15px;
+	position:absolute;
+	top:2px;
+	left: 145px;
+	color:grey;
+
 }
 
-.collapse{
-	color:#eceff1;
-	 -webkit-app-region: no-drag;
-}
-.collapse:hover{
-	color: #90a4ae;
-	cursor:pointer;
-}
-.close{
-	color:#b71c1c;
-	 -webkit-app-region: no-drag;
-}
+.currentObject{
+	width: 600px;
+	color:grey;
+	position:absolute;
+	top:483px;
+	left: 145px;
 
-.close:hover{
-	color: #f44336;
-	cursor:pointer;
 }

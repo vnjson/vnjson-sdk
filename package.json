@@ -1,27 +1,9 @@
 {
-    "name": "vnjson-sdk",
-    "main": "./index.html",
-    "version": "0.5.5",
-    "window": {
-        "min_width": 800,
-        "min_height": 600,
-        "max_width": 800,
-        "max_height": 600,
-        "width": 800,
-        "height": 600,
-        "frame": true,
-        "show": false,
-        "icon": "./icons/vnjson-256_256.png"
-    },
-    "dependencies": {
-        "nw-builder": "^2.2.0",
-        "slash": "^1.0.0",
-        "vnjson-utils": "^0.4.5",
-        "vue": "^1.0.25",
-        "vue-i18n": "^4.0.1"
-    },
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "versiony": "^1.4.0"
-    }
+	"name": "vnjson",
+	"version": "0.5.5",
+	"main": "./entry-point.js",
+	"dependencies": {
+		"fs-extra": "^0.30.0",
+		"express": "^4.14.0"
+	}
 }

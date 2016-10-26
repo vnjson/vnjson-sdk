@@ -1,0 +1,6 @@
+{
+	"name":"parallax-layer",
+	"dependencies": {
+		"parallax":"parallax/parallax"
+	}
+}
