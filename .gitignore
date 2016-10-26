@@ -1,4 +1,6 @@
 /node_modules
-/.cache
-/tools
+
 npm-debug.log
+*.mp3
+.png
+*
