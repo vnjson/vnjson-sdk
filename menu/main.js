@@ -1,7 +1,9 @@
-const  
-  {Menu}                  = require('electron');
+const 
+  fs                           = require('fs-extra'),
+  {projectsDir}                = require('../config/sdk'), 
+  {Menu, app}                  = require('electron');
 
-
+const projectName = 'kserxis1';
 const template = [
   {
     label: 'Project',
@@ -10,7 +12,13 @@ const template = [
         label: 'new',
         accelerator: 'Ctrl+N',
         click (){
-          console.log('ALERT');
+          fs.copy(app.getAppPath()+"/deploy",`${projectsDir}/${projectName}`,(err)=>{
+            if(!err){
+             console.log('Project has been created');
+            }else{
+              console.log(err);
+            }
+         });
         }
       },
       {

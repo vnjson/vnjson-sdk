@@ -1,34 +1,23 @@
-var express = require('express');
-var fs = require('fs-extra');
-var dir = require('./dirname');
+const
+  express                           = require('express'),
+  fs                                = require('fs-extra'),
+  {currentProjectDir}               = require('../data/path'),
+  conf                              = require('../config/sdk');
 
 
-module.exports.start = function(port,pathname,callback){
 
-if(port&&pathname&&callback){
+function start(callback){
 	let app = express();
-	let index = fs.readFileSync(`${pathname}/cache/index.html`);
-	app.use('/', express.static(pathname+'/cache'));
+	let index = fs.readFileSync(`${currentProjectDir}index.html`);
+	app.use('/', express.static(currentProjectDir));
 	app.get("/", function(req, res){
 		res.send(index);
 	});
-	
-	app.listen(port,callback);
-}else{
-
-var url = `http://localhost:9090`;
-
-	let app = express();
-	let index = fs.readFileSync(`${dir['project']}/cache/index.html`);
-	app.use('/', express.static(dir['project']+'/cache'));
-	app.get("/", function(req, res){
-		res.send(index);
-	});
-
-
-		app.listen(9090);
-		console.log(`open: ${url}`);
-}
-	
+	app.listen(conf.port, callback());
 };
+	
 
+
+module.exports = {
+	start,
+};

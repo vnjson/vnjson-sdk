@@ -1,5 +1,6 @@
 module.exports = {
 	width: 800,
 	height: 600,
-	port: '8080'
+	port: '8080',
+	projectsDir: 'E:/sandbox'
 }

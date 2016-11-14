@@ -1,6 +1,13 @@
+const
+  server                    = require('../service/server');
 module.exports = {
 	startCurrentProject (){
-		alert('start');
+		
+		server.start(()=>{
+			const webview = window.document.getElementById('web_view');
+			webview.reload();
+		});
+
 	},
 	viewProjectTree (){
 		alert('view');
