@@ -2,8 +2,7 @@ const
   conf                    = require('./config/sdk'),
   electron                = require('electron'),
   app                     = electron.app,
-  BrowserWindow           = electron.BrowserWindow,
-  mainMenu                = require('./menu/main');
+  BrowserWindow           = electron.BrowserWindow;
 
 
 var mainWindow = null;
@@ -24,9 +23,10 @@ app.on('ready', ()=> {
                       icon: './icons/vnjson-256_256.png',
                       resizable: false
                     });
-
+  mainWindow.setMenu(null);
   mainWindow.loadURL('file://' + __dirname + '/index.html');
-  mainMenu();  
+
+mainWindow.webContents.openDevTools();
   mainWindow.on('closed', ()=> {
     mainWindow = null;
   });

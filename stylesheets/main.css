@@ -81,3 +81,17 @@ webview.hide {
 	left: 145px;
 
 }
+
+.main__menu{
+	margin-bottom: 5px;
+
+}
+.main__menu--item{
+	padding:5px;
+	font-size:14pt;
+	display: inline-block;
+}
+.main__menu--item:hover{
+	color:red;
+	cursor:pointer;
+}

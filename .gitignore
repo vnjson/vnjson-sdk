@@ -2,5 +2,6 @@
 
 npm-debug.log
 *.mp3
-.png
-*
+
+*.png
+/deploy

@@ -8,37 +8,38 @@
 		<link rel="stylesheet" type="text/css" href="./stylesheets/common.css">
 		<link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
 		<script src="./vendors/vue.min.js"></script>
+    <script src="./vendors/vue-i18n.min.js"></script>
   </head>
   <body>
 <!---->
 <div id="app">
-<!--<nav>
-  <a href="#">Create</a>
-  <a href="#">Tools</a>
-  <a href="#">Settings</a>
-  <a href="#">Modules</a>
-  <a href="#">Help</a>
-</nav>-->
-<br>
-<section class='game-menu'>
-  <li v-on:click="startCurrentProject" class="game-component" id="run-reload"><i class="fa fa-play" aria-hidden="true"></i> start</li>
-  <li v-on:click="showGameCharacters" class="game-component"><i class="fa fa-users" aria-hidden="true"></i> characters</li>
+<nav class='main__menu' id="main__menu">
+  <div class="main__menu--item" v-on:click="openProjectPage">{{ $t('main_menu.project') }}</div>
+  <div class="main__menu--item" v-on:click="openToolsPage">{{ $t('main_menu.tools') }}</div>
+  <div class="main__menu--item">{{ $t('main_menu.settings') }}</div>
+  <div class="main__menu--item">{{ $t('main_menu.modules') }}</div>
+  <div class="main__menu--item">{{ $t('main_menu.help') }}</div>
+</nav>
+<br><br>
+<section class='game-menu' id="game__menu">
+  <li v-on:click="startCurrentProject" class="game-component" id="run-reload"><i class="fa fa-play" aria-hidden="true"></i> {{ $t('current_project.start') }}</li>
+  <li v-on:click="showGameCharacters" class="game-component"><i class="fa fa-users" aria-hidden="true"></i> {{ $t('current_project.characters') }}</li>
  <!-- <li v-on:click="showGameCharacters" class="game-component"><i class="fa-dot-circle-o" aria-hidden="true"></i> current</li>-->
-  <li v-on:click="viewProjectTree" class="game-component"><i class="fa fa-folder-o" aria-hidden="true"></i> view</li>
-  <li v-on:click="showScenesData" class="game-component"><i class="fa fa-film" aria-hidden="true"></i> scenes</li>
-  <li v-on:click="showImagesData" class="game-component"><i class="fa fa-picture-o" aria-hidden="true"></i> images</li>
-  <li v-on:click="showAudioData" class="game-component"><i class="fa fa-music" aria-hidden="true"></i> audio</li>
-  <li v-on:click="showStatisticPage" class="game-component"><i class="fa fa-pie-chart" aria-hidden="true"></i> statistic</li>
-  <li v-on:click="showDebugPage" class="game-component"><i class="fa fa-bug" aria-hidden="true"></i> debug</li>
-  <li v-on:click="showGameLibraries" class="game-component"><i class="fa fa-university" aria-hidden="true"></i> libraries</li>
-  <li v-on:click="showDataGamePlugins" class="game-component"><i class="fa fa-plug" aria-hidden="true"></i> extentions</li>
-  <li v-on:click="showOptionsPage" class="game-component"><i class="fa fa-sliders"></i> options</li>
-  <li v-on:click="buildHtmlProject" class="game-component"><i class="fa fa-archive" aria-hidden="true"></i> build</li>
+  <li v-on:click="viewProjectTree" class="game-component"><i class="fa fa-folder-o" aria-hidden="true"></i> {{ $t('current_project.view') }}</li>
+  <li v-on:click="showScenesData" class="game-component"><i class="fa fa-film" aria-hidden="true"></i> {{ $t('current_project.scenes') }}</li>
+  <li v-on:click="showImagesData" class="game-component"><i class="fa fa-picture-o" aria-hidden="true"></i> {{ $t('current_project.images') }}</li>
+  <li v-on:click="showAudioData" class="game-component"><i class="fa fa-music" aria-hidden="true"></i> {{ $t('current_project.audio') }}</li>
+  <li v-on:click="showStatisticPage" class="game-component"><i class="fa fa-pie-chart" aria-hidden="true"></i> {{ $t('current_project.statistic') }}</li>
+  <li v-on:click="showDebugPage" class="game-component"><i class="fa fa-bug" aria-hidden="true"></i> {{ $t('current_project.debug') }}</li>
+  <li v-on:click="showGameLibraries" class="game-component"><i class="fa fa-university" aria-hidden="true"></i> {{ $t('current_project.libraries') }}</li>
+  <li v-on:click="showDataGamePlugins" class="game-component"><i class="fa fa-plug" aria-hidden="true"></i> {{ $t('current_project.plugins') }}</li>
+  <li v-on:click="showOptionsPage" class="game-component"><i class="fa fa-sliders"></i> {{ $t('current_project.options') }}</li>
+  <li v-on:click="buildHtmlProject" class="game-component"><i class="fa fa-archive" aria-hidden="true"></i> {{ $t('current_project.build') }}</li>
 </section>
 
 <section id='output'>
-<webview id="web_view" src="http://localhost:{{port}}"></webview>
-<span class='pathname'>riteres/lab/chapter1/num</span><br>
+<webview id="web_view" src="http://localhost:9090"></webview>
+<!--<span class='pathname'>riteres/lab/chapter1/num</span><br>-->
 <span class='currentObject'>pr: Привет Алиса. Ля ля тополя<br>audio: profTheme<br>left: prof </span>
 </section><!--/output-->
 
