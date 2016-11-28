@@ -38,3 +38,23 @@ new Vue({
 
 });
 
+new Vue({
+	el: '#change__lang',
+	methods: {
+		'lang__en':()=>{
+			Vue.config.lang = "en-US";
+		},
+		'lang__ru':()=>{
+			Vue.config.lang = "ru-RU";
+		}
+	}
+});
+/*
+const {project} = require('./system/current');
+const gameComponent = documet.querySelectorAll('.game-component');
+if(project){
+	gameComponent.style.color ='#444';
+}else{
+	gameComponent.style.color ='#999';
+
+}*/

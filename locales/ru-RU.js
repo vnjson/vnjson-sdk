@@ -1,6 +1,7 @@
 module.exports = {
 	'main_menu':{
-		'project': 'Проект',
+		'open': 'Открыть',
+		'create': 'Создать',
 		'tools': 'Инструменты',
 		'modules': 'Модули',
 		'settings': 'Настройки',

@@ -13,13 +13,19 @@
   <body>
 <!---->
 <div id="app">
-<nav class='main__menu' id="main__menu">
-  <div class="main__menu--item" v-on:click="openProjectPage">{{ $t('main_menu.project') }}</div>
-  <div class="main__menu--item" v-on:click="openToolsPage">{{ $t('main_menu.tools') }}</div>
-  <div class="main__menu--item">{{ $t('main_menu.settings') }}</div>
-  <div class="main__menu--item">{{ $t('main_menu.modules') }}</div>
-  <div class="main__menu--item">{{ $t('main_menu.help') }}</div>
-</nav>
+<section class='main__menu' id="main__menu">
+<div class="mainmenu--floatright">
+    <!--<div class="main__menu--item"><span v-on:click="openProjectPage">{{ $t('main_menu.project') }}</span>
+
+    </div>-->
+  <span class="main__menu--item" v-on:click="openProject"> {{$t('main_menu.open')}}</span> 
+  <span class="main__menu--item" v-on:click="createProject"> {{$t('main_menu.create')}}</span>
+  <span class="main__menu--item" v-on:click="openToolsPage">{{ $t('main_menu.tools') }}</span>
+  <span class="main__menu--item" v-on:click="openSettingsPage">{{ $t('main_menu.settings') }}</span>
+  <span class="main__menu--item" v-on:click="openModulesPage">{{ $t('main_menu.modules') }}</span>
+  <span class="main__menu--item" v-on:click="openHelpPage">{{ $t('main_menu.help') }}</span>
+  </div>
+</section>
 <br><br>
 <section class='game-menu' id="game__menu">
   <li v-on:click="startCurrentProject" class="game-component" id="run-reload"><i class="fa fa-play" aria-hidden="true"></i> {{ $t('current_project.start') }}</li>
@@ -39,8 +45,13 @@
 
 <section id='output'>
 <webview id="web_view" src="http://localhost:9090"></webview>
-<!--<span class='pathname'>riteres/lab/chapter1/num</span><br>-->
-<span class='currentObject'>pr: Привет Алиса. Ля ля тополя<br>audio: profTheme<br>left: prof </span>
+
+<span class='pathname'>lab/chapter1/num</span>
+<!--<span class='currentObject'>pr: Привет Алиса. Ля ля тополя<br>audio: profTheme<br>left: prof </span>-->
+<span id="change__lang">
+  <span v-on:click="lang__ru">[ Russian ]</span> 
+  <span v-on:click="lang__en">[ English ]</span> 
+</span>
 </section><!--/output-->
 
 
