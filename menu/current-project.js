@@ -1,4 +1,7 @@
 const
+  vnjsonUtils               = require('vnjson-utils'),
+  configSdk                 = require('../config/sdk'),
+  current                   = require('../system/current'),
   server                    = require('../service/server');
 module.exports = {
 	startCurrentProject (){
@@ -40,7 +43,12 @@ module.exports = {
 		alert('options');
 	},
 	buildHtmlProject (){
-		alert('build');
+		let gameDir = configSdk.projectsDir+"/"+current.projectName;
+
+		vnjsonUtils.prebuild(gameDir,function(status){
+			alert(status);
+		})
+		
 	}
 
 };

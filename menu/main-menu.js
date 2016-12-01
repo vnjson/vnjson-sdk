@@ -1,10 +1,11 @@
 const
   vnjsonUtils                         = require('vnjson-utils'),
+  current                             = require('../system/current'),
   conf                                = require('../config/sdk');
 
 module.exports = {
 	createProject: ()=>{
-		vnjsonUtils.init(`${conf.projectsDir}/baka-kasin`,(status, data)=>{
+		vnjsonUtils.init(`${conf.projectsDir}/${current.projectName}`,(status, data)=>{
 			alert(status);
 		})
 	},
@@ -14,9 +15,9 @@ const dialog = electrong.dialog;
  dialog.showOpenDialog(global.mainWindow, {
     properties: ['openDirectory']
   })*/
-  alert('Open project')
+  	alert('Open project')
 
-},
+	},
 	openToolsPage: ()=>{
 		alert('tools');
 	},

@@ -1,3 +1,3 @@
 module.exports = {
-	project: null
+	projectName: 'kserksVN'
 }
