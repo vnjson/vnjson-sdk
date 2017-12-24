@@ -1,60 +1,35 @@
-const
-  webview                      = document.getElementById('web_view'),
-  liveReload                   = require('./service/live-reload');
 
-//const data = require('./data/data');
-
+const express = require('express'),
+	  app = new express(),
+	  sdk = require('./sdk');
 
 
-Vue.config.lang = 'en-US';
+app.use(express.static('./public'));
 
-webview.addEventListener('dom-ready', () => {
-
-  //webview.openDevTools()
-   liveReload.start(webview);
+app.get('/', (req, res)=>{
+	res.sendfile('./public/index.html')
 });
 
-Vue.use(VueI18n);
-
-
-
-Vue.locale('ru-RU', require('./locales/ru-RU'));
-Vue.locale('en-US', require('./locales/en-US'));
-
-
-
-new Vue({
-	el: '#main__menu',
-	//data: [],
-	methods: require('./menu/main-menu'),
-
-	
+app.get('/vnjson-modules', (req, res)=>{
+	res.sendfile('./modules.json');
 });
 
-new Vue({
-	el: '#game__menu',
-	//data: [],
-	methods: require('./menu/current-project'),
+
+
+app.get('/new-project', (req, res)=>{
+	sdk.init()
+});
+
+app.listen(9090, ()=>{
+
+
+
+
+nw.Window.open('http://localhost:9090', {}, function(win) {
+	win.showDevTools();
+
 
 });
 
-new Vue({
-	el: '#change__lang',
-	methods: {
-		'lang__en':()=>{
-			Vue.config.lang = "en-US";
-		},
-		'lang__ru':()=>{
-			Vue.config.lang = "ru-RU";
-		}
-	}
-});
-/*
-const {project} = require('./system/current');
-const gameComponent = documet.querySelectorAll('.game-component');
-if(project){
-	gameComponent.style.color ='#444';
-}else{
-	gameComponent.style.color ='#999';
 
-}*/
+});
