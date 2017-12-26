@@ -1,10 +1,11 @@
 
+const notifier = require('node-notifier');
 
 const vnjs = require('./vnjs');
 
 const { join }  = require('path');
 
-const __projectDir = "./vn11"// require('projects').demo;
+const __projectDir = require('./projects').demo;
 /**
  * Подключение модулей
  */
@@ -12,15 +13,37 @@ require('./modules.json').map( m=>require(m) );
 
 function init(){
 
-
-vnjs.emit('init', __projectDir, function (err){
+/*
+ * Копирование бойлерплэйта
+ */
+vnjs.emit('project-init', __projectDir, function (err){
 	if(err){
 		throw err;
 	}
-	console.log('Проект инициализирован1');
+
+	
+	/*
+	 * Первая сборка плагинов и сцены
+	 */
 	buildScenes();
 	buildPlugins();
-});
+	/*
+	 * Событие сборки проекта
+	 */
+	vnjs.emit('project-created', { port: 9192, /*browser: 'firefox'*/ });
+	/*
+ 	 * Сообщение
+	 */
+	notifier.notify({
+  		title: 'vnjson',
+  		message: 'Проект успешно создан',
+  		icon: join(__dirname, '/public/logo.png'), // Absolute path (doesn't work on balloons)
+  		sound: true, // Only Notification Center or Windows Toasters
+  		timeout: 3,
+  		type: 'info' // The notification type : info | warn | error
+	});
+});//emit
+
 
 }
 
@@ -34,6 +57,8 @@ function buildScenes(){
 }
 
 
+
+// Give it a menu
 
 function buildPlugins(){
 
@@ -53,6 +78,7 @@ vnjs.emit('plugins-builder', src_, dist_, options, err=>{
 });
 
 };
+
 
 
 module.exports = { 

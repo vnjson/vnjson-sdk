@@ -1,5 +1,6 @@
 [
   "../modules/vn-init",
   "../modules/scenes-to-json",
-  "../modules/build-screens"
+  "../modules/build-screens",
+  "../modules/browser-open"
 ]

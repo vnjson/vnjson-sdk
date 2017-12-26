@@ -17,15 +17,17 @@ app.get('/vnjson-modules', (req, res)=>{
 
 
 app.get('/new-project', (req, res)=>{
-	sdk.init()
+
+	sdk.init();
+	res.send('ok');
 });
 
-app.listen(9090, ()=>{
+app.listen(9294, ()=>{
 
 
 
 
-nw.Window.open('http://localhost:9090', {}, function(win) {
+nw.Window.open('http://localhost:9294', {}, function(win) {
 	win.showDevTools();
 
 

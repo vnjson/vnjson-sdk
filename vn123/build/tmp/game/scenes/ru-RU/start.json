@@ -1,0 +1,100 @@
+{
+  "assets": [
+    {
+      "id": "about",
+      "size": "9.84 kB",
+      "extension": ".png",
+      "path": "/assets/about.png"
+    },
+    {
+      "id": "cursor_pirrate",
+      "size": "2.28 kB",
+      "extension": ".png",
+      "path": "/assets/cursor_pirrate.png"
+    },
+    {
+      "id": "dialog_box",
+      "size": "3.2 kB",
+      "extension": ".png",
+      "path": "/assets/dialog_box.png"
+    }
+  ],
+  "chapter1": [
+    {
+      "pr": "chapy[ 1 ] Привет! Давненько не виделись",
+      "scene": "background",
+      "left": "right_ladya"
+    },
+    {
+      "al": "Да уж, давненько.",
+      "right": "lusil",
+      "menu": {
+        "Погнали в лабараторию": "lab/start",
+        "Перейти к главе 2": "chapter2"
+      }
+    },
+    {
+      "al": "Лагдно пошли в лабараторию"
+    },
+    {
+      "screen": "about"
+    },
+    {
+      "jump": "lab/start"
+    }
+  ],
+  "chapter2": [
+    {
+      "al": "chapy[ 2 ] И как это понимать? Разве мы не должны позабо",
+      "scene": "bg"
+    },
+    {
+      "pr": "Где лежит та черта",
+      "left": "prof_norm"
+    },
+    {
+      "al": "Лагдно пошли в лабараторию"
+    },
+    {
+      "jump": "start/chapter3"
+    }
+  ],
+  "chapter3": [
+    {
+      "al": "chapy[ 3 ] Мы должны пойти дальше и решить наши разгногласия",
+      "scene": "bg"
+    },
+    {
+      "pr": "Я давно об этом говорил, теперь ты решила пойти на это",
+      "left": "prof_norm"
+    },
+    {
+      "al": "Ладно проехали старый маразматик"
+    },
+    {
+      "jump": "lab/start"
+    }
+  ],
+  "characters": [
+    {
+      "pro": {
+        "name": "Профессор",
+        "color": "green",
+        "points": 44
+      }
+    },
+    {
+      "al": {
+        "name": "Алиса",
+        "color": "red"
+      }
+    }
+  ],
+  "entry": [
+    {
+      "screen": "main-menu",
+      "scene": "background",
+      "audio": "maintheme1"
+    }
+  ]
+}

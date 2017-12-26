@@ -1,0 +1,4 @@
+## Точка входа
+- screen: main-menu
+  scene: background
+  audio: maintheme1
