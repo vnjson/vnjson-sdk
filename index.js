@@ -1,37 +1,29 @@
+const { app, BrowserWindow , Menu } = require('electron')
+Menu.setApplicationMenu(false)
 
-const express = require('express'),
-	  app = new express(),
-	  sdk = require('./sdk');
+function createWindow () {
+  const win = new BrowserWindow({
+    width: 600,
+    height: 400,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
 
+  win.loadFile('./app/index.html')
 
-app.use(express.static('./public'));
+}
 
-app.get('/', (req, res)=>{
-	res.sendfile('./public/index.html')
-});
+app.whenReady().then(createWindow)
 
-app.get('/vnjson-modules', (req, res)=>{
-	res.sendfile('./modules.json');
-});
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
 
-
-
-app.get('/new-project', (req, res)=>{
-
-	sdk.init();
-	res.send('ok');
-});
-
-app.listen(9294, ()=>{
-
-
-
-
-nw.Window.open('http://localhost:9294', {}, function(win) {
-	win.showDevTools();
-
-
-});
-
-
-});
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
