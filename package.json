@@ -2,7 +2,13 @@
   "name": "vnjson-sdk",
   "version": "0.6.6",
   "main": "index.js",
-  "dependencies": {
-
+  "dependencies": {},
+  "devDependencies": {
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.23.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
   }
 }
